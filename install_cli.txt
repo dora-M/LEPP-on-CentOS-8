@@ -1,0 +1,65 @@
+dnf update
+dnf install nginx
+systemctl start nginx.service
+systemctl status nginx.service
+systemctl enable nginx.service
+firewall-cmd --add-port=80/tcp 
+firewall-cmd --add-port=443/tcp 
+firewall-cmd --permanent --add-port=80/tcp
+firewall-cmd --permanent --add-port=443/tcp
+firewall-cmd --reload
+elinks http://localhost
+dnf install php php-fpm php-mysqlnd php-opcache php-gd php-mbstring php-xml
+systemctl start php-fpm.service
+systemctl status php-fpm.service
+systemctl enable php-fpm.service
+
+vi /etc/php-fpm.d/www.conf
+
+	; Unix user/group of processes
+	; Note: The user is mandatory. If the group is not set, the default user's group
+	;       will be used.
+	; RPM: apache user chosen to provide access to the same directories as httpd
+	;user = apache
+	user = nginx
+	; RPM: Keep a group allowed to write in log dir.
+	;group = apache
+	group = nginx
+
+	; The address on which to accept FastCGI requests.
+	; Valid syntaxes are:
+	;   'ip.add.re.ss:port'    - to listen on a TCP socket to a specific IPv4 address on
+	;                            a specific port;
+	;   '[ip:6:addr:ess]:port' - to listen on a TCP socket to a specific IPv6 address on
+	;                            a specific port;
+	;   'port'                 - to listen on a TCP socket to all addresses
+	;                            (IPv6 and IPv4-mapped) on a specific port;
+	;   '/path/to/unix/socket' - to listen on a unix socket.
+	; Note: This value is mandatory.
+	listen = /run/php-fpm/www.sock
+
+systemctl restart php-fpm.service
+echo "<?php phpinfo(); ?>" > /usr/share/nginx/html/phpinfo.php
+chown -R nginx:nginx /usr/share/nginx/html
+systemctl restart nginx.service
+ps -ef | grep nginx
+ps -ef | grep php
+elinks http://localhost/phpinfo.php
+dnf install postgresql-server
+dnf install php-pgsql
+postgresql-setup --initdb --unit postgresql
+systemctl start postgresql.service
+systemctl status postgresql.service
+systemctl enable postgresql.service
+firewall-cmd --add-port=5432/tcp 
+firewall-cmd --permanent --add-port=5432/tcp
+firewall-cmd --reload
+
+
+
+
+
+
+
+
+

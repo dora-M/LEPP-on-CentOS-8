@@ -1,0 +1,497 @@
+[myuser@home1 ~]$ su -
+Password: 
+[root@home1 ~]# dnf install nginx
+Last metadata expiration check: 0:45:41 ago on Sat 07 Dec 2019 10:48:26 AM EET.
+Dependencies resolved.
+===================================================================================================================================================================================================================
+ Package                                                   Arch                                 Version                                                              Repository                               Size
+===================================================================================================================================================================================================================
+Installing:
+ nginx                                                     x86_64                               1:1.14.1-9.module_el8.0.0+184+e34fea82                               AppStream                               570 k
+Installing dependencies:
+ nginx-all-modules                                         noarch                               1:1.14.1-9.module_el8.0.0+184+e34fea82                               AppStream                                23 k
+ nginx-filesystem                                          noarch                               1:1.14.1-9.module_el8.0.0+184+e34fea82                               AppStream                                24 k
+ nginx-mod-http-image-filter                               x86_64                               1:1.14.1-9.module_el8.0.0+184+e34fea82                               AppStream                                35 k
+ nginx-mod-http-perl                                       x86_64                               1:1.14.1-9.module_el8.0.0+184+e34fea82                               AppStream                                45 k
+ nginx-mod-http-xslt-filter                                x86_64                               1:1.14.1-9.module_el8.0.0+184+e34fea82                               AppStream                                33 k
+ nginx-mod-mail                                            x86_64                               1:1.14.1-9.module_el8.0.0+184+e34fea82                               AppStream                                64 k
+ nginx-mod-stream                                          x86_64                               1:1.14.1-9.module_el8.0.0+184+e34fea82                               AppStream                                85 k
+Enabling module streams:
+ nginx                                                                                          1.14                                                                                                              
+
+Transaction Summary
+===================================================================================================================================================================================================================
+Install  8 Packages
+
+Total download size: 881 k
+Installed size: 2.0 M
+Is this ok [y/N]: y
+Downloading Packages:
+(1/8): nginx-all-modules-1.14.1-9.module_el8.0.0+184+e34fea82.noarch.rpm                                                                                                            21 kB/s |  23 kB     00:01    
+(2/8): nginx-filesystem-1.14.1-9.module_el8.0.0+184+e34fea82.noarch.rpm                                                                                                             22 kB/s |  24 kB     00:01    
+(3/8): nginx-mod-http-image-filter-1.14.1-9.module_el8.0.0+184+e34fea82.x86_64.rpm                                                                                                 678 kB/s |  35 kB     00:00    
+(4/8): nginx-mod-http-perl-1.14.1-9.module_el8.0.0+184+e34fea82.x86_64.rpm                                                                                                         885 kB/s |  45 kB     00:00    
+(5/8): nginx-1.14.1-9.module_el8.0.0+184+e34fea82.x86_64.rpm                                                                                                                       477 kB/s | 570 kB     00:01    
+(6/8): nginx-mod-mail-1.14.1-9.module_el8.0.0+184+e34fea82.x86_64.rpm                                                                                                              2.0 MB/s |  64 kB     00:00    
+(7/8): nginx-mod-http-xslt-filter-1.14.1-9.module_el8.0.0+184+e34fea82.x86_64.rpm                                                                                                  504 kB/s |  33 kB     00:00    
+(8/8): nginx-mod-stream-1.14.1-9.module_el8.0.0+184+e34fea82.x86_64.rpm                                                                                                            2.1 MB/s |  85 kB     00:00    
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Total                                                                                                                                                                              331 kB/s | 881 kB     00:02     
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+  Preparing        :                                                                                                                                                                                           1/1 
+  Running scriptlet: nginx-filesystem-1:1.14.1-9.module_el8.0.0+184+e34fea82.noarch                                                                                                                            1/8 
+  Installing       : nginx-filesystem-1:1.14.1-9.module_el8.0.0+184+e34fea82.noarch                                                                                                                            1/8 
+  Installing       : nginx-mod-http-image-filter-1:1.14.1-9.module_el8.0.0+184+e34fea82.x86_64                                                                                                                 2/8 
+  Running scriptlet: nginx-mod-http-image-filter-1:1.14.1-9.module_el8.0.0+184+e34fea82.x86_64                                                                                                                 2/8 
+  Installing       : nginx-mod-http-perl-1:1.14.1-9.module_el8.0.0+184+e34fea82.x86_64                                                                                                                         3/8 
+  Running scriptlet: nginx-mod-http-perl-1:1.14.1-9.module_el8.0.0+184+e34fea82.x86_64                                                                                                                         3/8 
+  Installing       : nginx-mod-http-xslt-filter-1:1.14.1-9.module_el8.0.0+184+e34fea82.x86_64                                                                                                                  4/8 
+  Running scriptlet: nginx-mod-http-xslt-filter-1:1.14.1-9.module_el8.0.0+184+e34fea82.x86_64                                                                                                                  4/8 
+  Installing       : nginx-mod-mail-1:1.14.1-9.module_el8.0.0+184+e34fea82.x86_64                                                                                                                              5/8 
+  Running scriptlet: nginx-mod-mail-1:1.14.1-9.module_el8.0.0+184+e34fea82.x86_64                                                                                                                              5/8 
+  Installing       : nginx-all-modules-1:1.14.1-9.module_el8.0.0+184+e34fea82.noarch                                                                                                                           6/8 
+  Installing       : nginx-1:1.14.1-9.module_el8.0.0+184+e34fea82.x86_64                                                                                                                                       7/8 
+  Running scriptlet: nginx-1:1.14.1-9.module_el8.0.0+184+e34fea82.x86_64                                                                                                                                       7/8 
+  Installing       : nginx-mod-stream-1:1.14.1-9.module_el8.0.0+184+e34fea82.x86_64                                                                                                                            8/8 
+  Running scriptlet: nginx-mod-stream-1:1.14.1-9.module_el8.0.0+184+e34fea82.x86_64                                                                                                                            8/8 
+  Verifying        : nginx-1:1.14.1-9.module_el8.0.0+184+e34fea82.x86_64                                                                                                                                       1/8 
+  Verifying        : nginx-all-modules-1:1.14.1-9.module_el8.0.0+184+e34fea82.noarch                                                                                                                           2/8 
+  Verifying        : nginx-filesystem-1:1.14.1-9.module_el8.0.0+184+e34fea82.noarch                                                                                                                            3/8 
+  Verifying        : nginx-mod-http-image-filter-1:1.14.1-9.module_el8.0.0+184+e34fea82.x86_64                                                                                                                 4/8 
+  Verifying        : nginx-mod-http-perl-1:1.14.1-9.module_el8.0.0+184+e34fea82.x86_64                                                                                                                         5/8 
+  Verifying        : nginx-mod-http-xslt-filter-1:1.14.1-9.module_el8.0.0+184+e34fea82.x86_64                                                                                                                  6/8 
+  Verifying        : nginx-mod-mail-1:1.14.1-9.module_el8.0.0+184+e34fea82.x86_64                                                                                                                              7/8 
+  Verifying        : nginx-mod-stream-1:1.14.1-9.module_el8.0.0+184+e34fea82.x86_64                                                                                                                            8/8 
+
+Installed:
+  nginx-1:1.14.1-9.module_el8.0.0+184+e34fea82.x86_64                                                  nginx-all-modules-1:1.14.1-9.module_el8.0.0+184+e34fea82.noarch                                             
+  nginx-filesystem-1:1.14.1-9.module_el8.0.0+184+e34fea82.noarch                                       nginx-mod-http-image-filter-1:1.14.1-9.module_el8.0.0+184+e34fea82.x86_64                                   
+  nginx-mod-http-perl-1:1.14.1-9.module_el8.0.0+184+e34fea82.x86_64                                    nginx-mod-http-xslt-filter-1:1.14.1-9.module_el8.0.0+184+e34fea82.x86_64                                    
+  nginx-mod-mail-1:1.14.1-9.module_el8.0.0+184+e34fea82.x86_64                                         nginx-mod-stream-1:1.14.1-9.module_el8.0.0+184+e34fea82.x86_64                                              
+
+Complete!
+[root@home1 ~]# systemctl start nginx.service
+[root@home1 ~]# systemctl status nginx.service
+● nginx.service - The nginx HTTP and reverse proxy server
+   Loaded: loaded (/usr/lib/systemd/system/nginx.service; disabled; vendor preset: disabled)
+   Active: active (running) since Sat 2019-12-07 11:34:56 EET; 11s ago
+  Process: 12499 ExecStart=/usr/sbin/nginx (code=exited, status=0/SUCCESS)
+  Process: 12496 ExecStartPre=/usr/sbin/nginx -t (code=exited, status=0/SUCCESS)
+  Process: 12495 ExecStartPre=/usr/bin/rm -f /run/nginx.pid (code=exited, status=0/SUCCESS)
+ Main PID: 12500 (nginx)
+    Tasks: 3 (limit: 22204)
+   Memory: 8.8M
+   CGroup: /system.slice/nginx.service
+           ├─12500 nginx: master process /usr/sbin/nginx
+           ├─12501 nginx: worker process
+           └─12502 nginx: worker process
+
+Dec 07 11:34:56 home1 systemd[1]: Starting The nginx HTTP and reverse proxy server...
+Dec 07 11:34:56 home1 nginx[12496]: nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
+Dec 07 11:34:56 home1 nginx[12496]: nginx: configuration file /etc/nginx/nginx.conf test is successful
+Dec 07 11:34:56 home1 systemd[1]: Started The nginx HTTP and reverse proxy server.
+[root@home1 ~]# systemctl enable nginx.service
+Created symlink /etc/systemd/system/multi-user.target.wants/nginx.service → /usr/lib/systemd/system/nginx.service.
+[root@home1 ~]# firewall-cmd --add-port=80/tcp 
+success
+[root@home1 ~]# firewall-cmd --add-port=443/tcp 
+success
+[root@home1 ~]# firewall-cmd --permanent --add-port=80/tcp
+success
+[root@home1 ~]# firewall-cmd --permanent --add-port=443/tcp
+success
+[root@home1 ~]# firewall-cmd --reload
+success
+[root@home1 ~]# elinks http://localhost
+
+                                                                                                                                                   Test Page for the Nginx HTTP Server on Red Hat Enterprise Linux 
+                                                                                   Welcome to nginx on Red Hat Enterprise Linux!                                                                                   
+                                                                                                                                                                                                                   
+   This page is used to test the proper operation of the nginx HTTP server after it has been installed. If you can read this page, it means that the web server installed at this site is working properly.        
+                                                                                                                                                                                                                   
+                                                                                               Website Administrator                                                                                               
+                                                                                                                                                                                                                   
+   This is the default index.html page that is distributed with nginx on Red Hat Enterprise Linux. It is located in /usr/share/nginx/html.                                                                         
+                                                                                                                                                                                                                   
+   You should now put your content in a location of your choice and edit the root configuration directive in the nginx configuration file /etc/nginx/nginx.conf.                                                   
+                                                                                                                                                                                                                   
+   For information on Red Hat Enterprise Linux, please visit the Red Hat, Inc. website. The documentation for Red Hat Enterprise Linux is available on the Red Hat, Inc. website.                                  
+                                                                                                                                                                                                                   
+                                                                           [ Powered by nginx ] [ Powered by Red Hat Enterprise Linux ] 
+
+[root@home1 ~]# dnf install php php-fpm php-mysqlnd php-opcache php-gd php-mbstring php-xml
+Last metadata expiration check: 1:02:22 ago on Sat 07 Dec 2019 10:48:26 AM EET.
+Dependencies resolved.
+============================================================================================================================================================================================
+ Package                                      Arch                             Version                                                            Repository                           Size
+============================================================================================================================================================================================
+Installing:
+ php                                          x86_64                           7.2.11-1.module_el8.0.0+56+d1ca79aa                                AppStream                           1.5 M
+ php-fpm                                      x86_64                           7.2.11-1.module_el8.0.0+56+d1ca79aa                                AppStream                           1.6 M
+ php-gd                                       x86_64                           7.2.11-1.module_el8.0.0+56+d1ca79aa                                AppStream                            83 k
+ php-mbstring                                 x86_64                           7.2.11-1.module_el8.0.0+56+d1ca79aa                                AppStream                           580 k
+ php-mysqlnd                                  x86_64                           7.2.11-1.module_el8.0.0+56+d1ca79aa                                AppStream                           190 k
+ php-opcache                                  x86_64                           7.2.11-1.module_el8.0.0+56+d1ca79aa                                AppStream                           230 k
+ php-xml                                      x86_64                           7.2.11-1.module_el8.0.0+56+d1ca79aa                                AppStream                           188 k
+Installing dependencies:
+ apr                                          x86_64                           1.6.3-9.el8                                                        AppStream                           125 k
+ apr-util                                     x86_64                           1.6.1-6.el8                                                        AppStream                           105 k
+ centos-logos-httpd                           noarch                           80.5-2.el8                                                         AppStream                            24 k
+ httpd                                        x86_64                           2.4.37-12.module_el8.0.0+185+5908b0db                              AppStream                           1.7 M
+ httpd-filesystem                             noarch                           2.4.37-12.module_el8.0.0+185+5908b0db                              AppStream                            35 k
+ httpd-tools                                  x86_64                           2.4.37-12.module_el8.0.0+185+5908b0db                              AppStream                           102 k
+ mod_http2                                    x86_64                           1.11.3-3.module_el8.0.0+185+5908b0db                               AppStream                           158 k
+ php-cli                                      x86_64                           7.2.11-1.module_el8.0.0+56+d1ca79aa                                AppStream                           3.1 M
+ php-common                                   x86_64                           7.2.11-1.module_el8.0.0+56+d1ca79aa                                AppStream                           653 k
+ php-pdo                                      x86_64                           7.2.11-1.module_el8.0.0+56+d1ca79aa                                AppStream                           122 k
+Installing weak dependencies:
+ apr-util-bdb                                 x86_64                           1.6.1-6.el8                                                        AppStream                            25 k
+ apr-util-openssl                             x86_64                           1.6.1-6.el8                                                        AppStream                            27 k
+Enabling module streams:
+ httpd                                                                         2.4                                                                                                         
+ php                                                                           7.2                                                                                                         
+
+Transaction Summary
+============================================================================================================================================================================================
+Install  19 Packages
+
+Total download size: 10 M
+Installed size: 35 M
+Is this ok [y/N]: y
+Downloading Packages:
+(1/19): apr-util-bdb-1.6.1-6.el8.x86_64.rpm                                                                                                                                         22 kB/s |  25 kB     00:01    
+(2/19): apr-1.6.3-9.el8.x86_64.rpm                                                                                                                                                 109 kB/s | 125 kB     00:01    
+(3/19): apr-util-1.6.1-6.el8.x86_64.rpm                                                                                                                                             89 kB/s | 105 kB     00:01    
+(4/19): apr-util-openssl-1.6.1-6.el8.x86_64.rpm                                                                                                                                    548 kB/s |  27 kB     00:00    
+(5/19): centos-logos-httpd-80.5-2.el8.noarch.rpm                                                                                                                                   335 kB/s |  24 kB     00:00    
+(6/19): httpd-filesystem-2.4.37-12.module_el8.0.0+185+5908b0db.noarch.rpm                                                                                                          630 kB/s |  35 kB     00:00    
+(7/19): httpd-tools-2.4.37-12.module_el8.0.0+185+5908b0db.x86_64.rpm                                                                                                               2.4 MB/s | 102 kB     00:00    
+(8/19): mod_http2-1.11.3-3.module_el8.0.0+185+5908b0db.x86_64.rpm                                                                                                                  2.9 MB/s | 158 kB     00:00    
+(9/19): httpd-2.4.37-12.module_el8.0.0+185+5908b0db.x86_64.rpm                                                                                                                     9.7 MB/s | 1.7 MB     00:00    
+(10/19): php-common-7.2.11-1.module_el8.0.0+56+d1ca79aa.x86_64.rpm                                                                                                                 7.7 MB/s | 653 kB     00:00    
+(11/19): php-7.2.11-1.module_el8.0.0+56+d1ca79aa.x86_64.rpm                                                                                                                        5.4 MB/s | 1.5 MB     00:00    
+(12/19): php-fpm-7.2.11-1.module_el8.0.0+56+d1ca79aa.x86_64.rpm                                                                                                                     11 MB/s | 1.6 MB     00:00    
+(13/19): php-cli-7.2.11-1.module_el8.0.0+56+d1ca79aa.x86_64.rpm                                                                                                                    9.2 MB/s | 3.1 MB     00:00    
+(14/19): php-gd-7.2.11-1.module_el8.0.0+56+d1ca79aa.x86_64.rpm                                                                                                                     1.0 MB/s |  83 kB     00:00    
+(15/19): php-mbstring-7.2.11-1.module_el8.0.0+56+d1ca79aa.x86_64.rpm                                                                                                               7.1 MB/s | 580 kB     00:00    
+(16/19): php-mysqlnd-7.2.11-1.module_el8.0.0+56+d1ca79aa.x86_64.rpm                                                                                                                2.5 MB/s | 190 kB     00:00    
+(17/19): php-opcache-7.2.11-1.module_el8.0.0+56+d1ca79aa.x86_64.rpm                                                                                                                3.0 MB/s | 230 kB     00:00    
+(18/19): php-pdo-7.2.11-1.module_el8.0.0+56+d1ca79aa.x86_64.rpm                                                                                                                    1.5 MB/s | 122 kB     00:00    
+(19/19): php-xml-7.2.11-1.module_el8.0.0+56+d1ca79aa.x86_64.rpm                                                                                                                    3.8 MB/s | 188 kB     00:00    
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Total                                                                                                                                                                              3.3 MB/s |  10 MB     00:03     
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+  Preparing        :                                                                                                                                                                                           1/1 
+  Installing       : php-common-7.2.11-1.module_el8.0.0+56+d1ca79aa.x86_64                                                                                                                                    1/19 
+  Running scriptlet: httpd-filesystem-2.4.37-12.module_el8.0.0+185+5908b0db.noarch                                                                                                                            2/19 
+  Installing       : httpd-filesystem-2.4.37-12.module_el8.0.0+185+5908b0db.noarch                                                                                                                            2/19 
+  Installing       : apr-1.6.3-9.el8.x86_64                                                                                                                                                                   3/19 
+  Running scriptlet: apr-1.6.3-9.el8.x86_64                                                                                                                                                                   3/19 
+  Installing       : apr-util-bdb-1.6.1-6.el8.x86_64                                                                                                                                                          4/19 
+  Installing       : apr-util-openssl-1.6.1-6.el8.x86_64                                                                                                                                                      5/19 
+  Installing       : apr-util-1.6.1-6.el8.x86_64                                                                                                                                                              6/19 
+  Running scriptlet: apr-util-1.6.1-6.el8.x86_64                                                                                                                                                              6/19 
+  Installing       : httpd-tools-2.4.37-12.module_el8.0.0+185+5908b0db.x86_64                                                                                                                                 7/19 
+  Installing       : php-fpm-7.2.11-1.module_el8.0.0+56+d1ca79aa.x86_64                                                                                                                8/19 
+  Running scriptlet: php-fpm-7.2.11-1.module_el8.0.0+56+d1ca79aa.x86_64                                                                                                                8/19 
+  Installing       : php-cli-7.2.11-1.module_el8.0.0+56+d1ca79aa.x86_64                                                                                                                9/19 
+  Installing       : php-pdo-7.2.11-1.module_el8.0.0+56+d1ca79aa.x86_64                                                                                                               10/19 
+  Installing       : centos-logos-httpd-80.5-2.el8.noarch                                                                                                                             11/19 
+  Installing       : mod_http2-1.11.3-3.module_el8.0.0+185+5908b0db.x86_64                                                                                                            12/19 
+  Installing       : httpd-2.4.37-12.module_el8.0.0+185+5908b0db.x86_64                                                                                                               13/19 
+  Running scriptlet: httpd-2.4.37-12.module_el8.0.0+185+5908b0db.x86_64                                                                                                               13/19 
+  Installing       : php-7.2.11-1.module_el8.0.0+56+d1ca79aa.x86_64                                                                                                                   14/19 
+  Installing       : php-mysqlnd-7.2.11-1.module_el8.0.0+56+d1ca79aa.x86_64                                                                                                           15/19 
+  Installing       : php-gd-7.2.11-1.module_el8.0.0+56+d1ca79aa.x86_64                                                                                                                16/19 
+  Installing       : php-mbstring-7.2.11-1.module_el8.0.0+56+d1ca79aa.x86_64                                                                                                          17/19 
+  Installing       : php-opcache-7.2.11-1.module_el8.0.0+56+d1ca79aa.x86_64                                                                                                           18/19 
+  Installing       : php-xml-7.2.11-1.module_el8.0.0+56+d1ca79aa.x86_64                                                                                                               19/19 
+  Running scriptlet: httpd-2.4.37-12.module_el8.0.0+185+5908b0db.x86_64                                                                                                               19/19 
+  Running scriptlet: php-xml-7.2.11-1.module_el8.0.0+56+d1ca79aa.x86_64                                                                                                               19/19 
+  Running scriptlet: php-fpm-7.2.11-1.module_el8.0.0+56+d1ca79aa.x86_64                                                                                                               19/19 
+  Verifying        : apr-1.6.3-9.el8.x86_64                                                                                                                                            1/19 
+  Verifying        : apr-util-1.6.1-6.el8.x86_64                                                                                                                                       2/19 
+  Verifying        : apr-util-bdb-1.6.1-6.el8.x86_64                                                                                                                                   3/19 
+  Verifying        : apr-util-openssl-1.6.1-6.el8.x86_64                                                                                                                               4/19 
+  Verifying        : centos-logos-httpd-80.5-2.el8.noarch                                                                                                                              5/19 
+  Verifying        : httpd-2.4.37-12.module_el8.0.0+185+5908b0db.x86_64                                                                                                                6/19 
+  Verifying        : httpd-filesystem-2.4.37-12.module_el8.0.0+185+5908b0db.noarch                                                                                                     7/19 
+  Verifying        : httpd-tools-2.4.37-12.module_el8.0.0+185+5908b0db.x86_64                                                                                                          8/19 
+  Verifying        : mod_http2-1.11.3-3.module_el8.0.0+185+5908b0db.x86_64                                                                                                             9/19 
+  Verifying        : php-7.2.11-1.module_el8.0.0+56+d1ca79aa.x86_64                                                                                                                   10/19 
+  Verifying        : php-cli-7.2.11-1.module_el8.0.0+56+d1ca79aa.x86_64                                                                                                               11/19 
+  Verifying        : php-common-7.2.11-1.module_el8.0.0+56+d1ca79aa.x86_64                                                                                                            12/19 
+  Verifying        : php-fpm-7.2.11-1.module_el8.0.0+56+d1ca79aa.x86_64                                                                                                               13/19 
+  Verifying        : php-gd-7.2.11-1.module_el8.0.0+56+d1ca79aa.x86_64                                                                                                                14/19 
+  Verifying        : php-mbstring-7.2.11-1.module_el8.0.0+56+d1ca79aa.x86_64                                                                                                          15/19 
+  Verifying        : php-mysqlnd-7.2.11-1.module_el8.0.0+56+d1ca79aa.x86_64                                                                                                           16/19 
+  Verifying        : php-opcache-7.2.11-1.module_el8.0.0+56+d1ca79aa.x86_64                                                                                                           17/19 
+  Verifying        : php-pdo-7.2.11-1.module_el8.0.0+56+d1ca79aa.x86_64                                                                                                               18/19 
+  Verifying        : php-xml-7.2.11-1.module_el8.0.0+56+d1ca79aa.x86_64                                                                                                               19/19 
+
+Installed:
+  php-7.2.11-1.module_el8.0.0+56+d1ca79aa.x86_64              php-fpm-7.2.11-1.module_el8.0.0+56+d1ca79aa.x86_64                php-gd-7.2.11-1.module_el8.0.0+56+d1ca79aa.x86_64           
+  php-mbstring-7.2.11-1.module_el8.0.0+56+d1ca79aa.x86_64     php-mysqlnd-7.2.11-1.module_el8.0.0+56+d1ca79aa.x86_64            php-opcache-7.2.11-1.module_el8.0.0+56+d1ca79aa.x86_64      
+  php-xml-7.2.11-1.module_el8.0.0+56+d1ca79aa.x86_64          apr-util-bdb-1.6.1-6.el8.x86_64                                   apr-util-openssl-1.6.1-6.el8.x86_64                         
+  apr-1.6.3-9.el8.x86_64                                      apr-util-1.6.1-6.el8.x86_64                                       centos-logos-httpd-80.5-2.el8.noarch                        
+  httpd-2.4.37-12.module_el8.0.0+185+5908b0db.x86_64          httpd-filesystem-2.4.37-12.module_el8.0.0+185+5908b0db.noarch     httpd-tools-2.4.37-12.module_el8.0.0+185+5908b0db.x86_64    
+  mod_http2-1.11.3-3.module_el8.0.0+185+5908b0db.x86_64       php-cli-7.2.11-1.module_el8.0.0+56+d1ca79aa.x86_64                php-common-7.2.11-1.module_el8.0.0+56+d1ca79aa.x86_64       
+  php-pdo-7.2.11-1.module_el8.0.0+56+d1ca79aa.x86_64         
+
+Complete!
+[root@home1 ~]# systemctl start php-fpm.service
+[root@home1 ~]# systemctl status php-fpm.service
+● php-fpm.service - The PHP FastCGI Process Manager
+   Loaded: loaded (/usr/lib/systemd/system/php-fpm.service; disabled; vendor preset: disabled)
+   Active: active (running) since Sat 2019-12-07 11:52:12 EET; 12s ago
+ Main PID: 14028 (php-fpm)
+   Status: "Processes active: 0, idle: 5, Requests: 0, slow: 0, Traffic: 0req/sec"
+    Tasks: 6 (limit: 22204)
+   Memory: 22.7M
+   CGroup: /system.slice/php-fpm.service
+           ├─14028 php-fpm: master process (/etc/php-fpm.conf)
+           ├─14029 php-fpm: pool www
+           ├─14030 php-fpm: pool www
+           ├─14031 php-fpm: pool www
+           ├─14032 php-fpm: pool www
+           └─14033 php-fpm: pool www
+
+Dec 07 11:52:12 home1 systemd[1]: Starting The PHP FastCGI Process Manager...
+Dec 07 11:52:12 home1 systemd[1]: Started The PHP FastCGI Process Manager.
+[root@home1 ~]# systemctl enable php-fpm.service
+Created symlink /etc/systemd/system/multi-user.target.wants/php-fpm.service → /usr/lib/systemd/system/php-fpm.service.
+[root@home1 ~]# vi /etc/php-fpm.d/www.conf
+
+	; Unix user/group of processes
+	; Note: The user is mandatory. If the group is not set, the default user's group
+	;       will be used.
+	; RPM: apache user chosen to provide access to the same directories as httpd
+	;user = apache
+	user = nginx
+	; RPM: Keep a group allowed to write in log dir.
+	;group = apache
+	group = nginx
+
+	; The address on which to accept FastCGI requests.
+	; Valid syntaxes are:
+	;   'ip.add.re.ss:port'    - to listen on a TCP socket to a specific IPv4 address on
+	;                            a specific port;
+	;   '[ip:6:addr:ess]:port' - to listen on a TCP socket to a specific IPv6 address on
+	;                            a specific port;
+	;   'port'                 - to listen on a TCP socket to all addresses
+	;                            (IPv6 and IPv4-mapped) on a specific port;
+	;   '/path/to/unix/socket' - to listen on a unix socket.
+	; Note: This value is mandatory.
+	listen = /run/php-fpm/www.sock
+
+[root@home1 ~]# systemctl restart php-fpm.service
+[root@home1 ~]# echo "<?php phpinfo(); ?>" > /usr/share/nginx/html/phpinfo.php
+[root@home1 ~]# chown -R nginx:nginx /usr/share/nginx/html
+[root@home1 ~]# systemctl restart nginx.service
+[root@home1 ~]# ps -ef | grep nginx
+nginx    14146 14143  0 11:55 ?        00:00:00 php-fpm: pool www
+nginx    14147 14143  0 11:55 ?        00:00:00 php-fpm: pool www
+nginx    14148 14143  0 11:55 ?        00:00:00 php-fpm: pool www
+nginx    14149 14143  0 11:55 ?        00:00:00 php-fpm: pool www
+nginx    14150 14143  0 11:55 ?        00:00:00 php-fpm: pool www
+root     14277     1  0 11:59 ?        00:00:00 nginx: master process /usr/sbin/nginx
+nginx    14278 14277  0 11:59 ?        00:00:00 nginx: worker process
+nginx    14279 14277  0 11:59 ?        00:00:00 nginx: worker process
+root     14389 10684  0 12:10 pts/1    00:00:00 grep --color=auto nginx
+[root@home1 ~]# ps -ef | grep php
+root     14143     1  0 11:55 ?        00:00:00 php-fpm: master process (/etc/php-fpm.conf)
+nginx    14146 14143  0 11:55 ?        00:00:00 php-fpm: pool www
+nginx    14147 14143  0 11:55 ?        00:00:00 php-fpm: pool www
+nginx    14148 14143  0 11:55 ?        00:00:00 php-fpm: pool www
+nginx    14149 14143  0 11:55 ?        00:00:00 php-fpm: pool www
+nginx    14150 14143  0 11:55 ?        00:00:00 php-fpm: pool www
+root     14399 10684  0 12:10 pts/1    00:00:00 grep --color=auto php
+[myuser@home1 ~]$ elinks http://localhost/phpinfo.php
+
+                                                                                                                                                                                                  phpinfo() (1/20) 
+   PHP logo                                                                                                                                                                                                        
+                                                                                                                                                                                                                   
+   PHP Version 7.2.11                                                                                                                                                                                              
+                                                                                                                                                                                                                   
+   System                                  Linux home1 4.18.0-80.11.2.el8_0.x86_64 #1 SMP Tue Sep 24 11:32:19 UTC 2019 x86_64                                                                                      
+   Build Date                              Oct 9 2018 15:09:36                                                                                                                                                     
+   Server API                              FPM/FastCGI                                                                                                                                                             
+   Virtual Directory Support               disabled                                                                                                                                                                
+   Configuration File (php.ini) Path       /etc                                                                                                                                                                    
+   Loaded Configuration File               /etc/php.ini                                                                                                                                                            
+   Scan this dir for additional .ini files /etc/php.d                                                                                                                                                              
+                                           /etc/php.d/10-opcache.ini, /etc/php.d/20-bz2.ini, /etc/php.d/20-calendar.ini, /etc/php.d/20-ctype.ini, /etc/php.d/20-curl.ini, /etc/php.d/20-dom.ini,                   
+                                           /etc/php.d/20-exif.ini, /etc/php.d/20-fileinfo.ini, /etc/php.d/20-ftp.ini, /etc/php.d/20-gd.ini, /etc/php.d/20-gettext.ini, /etc/php.d/20-iconv.ini,                    
+   Additional .ini files parsed            /etc/php.d/20-mbstring.ini, /etc/php.d/20-mysqlnd.ini, /etc/php.d/20-pdo.ini, /etc/php.d/20-phar.ini, /etc/php.d/20-simplexml.ini, /etc/php.d/20-sockets.ini,           
+                                           /etc/php.d/20-sqlite3.ini, /etc/php.d/20-tokenizer.ini, /etc/php.d/20-xml.ini, /etc/php.d/20-xmlwriter.ini, /etc/php.d/20-xsl.ini, /etc/php.d/30-mysqli.ini,            
+                                           /etc/php.d/30-pdo_mysql.ini, /etc/php.d/30-pdo_sqlite.ini, /etc/php.d/30-wddx.ini, /etc/php.d/30-xmlreader.ini                                                          
+   PHP API                                 20170718                                                                                                                                                                
+   PHP Extension                           20170718                                                                                                                                                                
+   Zend Extension                          320170718                                                                                                                                                               
+   Zend Extension Build                    API320170718,NTS                                                                                                                                                        
+   PHP Extension Build                     API20170718,NTS                                                                                                                                                         
+   Debug Build                             no                                                                                                                                                                      
+   Thread Safety                           disabled                                                                                                                                                                
+   Zend Signal Handling                    enabled                                                                                                                                                                 
+   Zend Memory Manager                     enabled                                                                                                                                                                 
+   Zend Multibyte Support                  provided by mbstring                                                                                                                                                    
+   IPv6 Support                            enabled                                                                                                                                                                 
+   DTrace Support                          available, disabled                                                                                                                                                     
+   Registered PHP Streams                  https, ftps, compress.zlib, php, file, glob, data, http, ftp, compress.bzip2, phar                                                                                      
+   Registered Stream Socket Transports     tcp, udp, unix, udg, ssl, tls, tlsv1.0, tlsv1.1, tlsv1.2                                                                                                                
+   Registered Stream Filters               zlib.*, string.rot13, string.toupper, string.tolower, string.strip_tags, convert.*, consumed, dechunk, bzip2.*, convert.iconv.*                                         
+                                                                                                                                                                                                                   
+   Zend logo This program makes use of the Zend Scripting Language Engine:                                                                                                                                         
+   Zend Engine v3.2.0, Copyright (c) 1998-2018 Zend Technologies                                                                                                                                                   
+       with Zend OPcache v7.2.11, Copyright (c) 1999-2018, by Zend Technologies                                                                                                                                    
+                                                                                                                                                                                                                   
+   ─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────   
+                                                                                                                                                                                                                   
+                                                                                                   Configuration                                                                                                   
+                                                                                                                                                                                                                   
+                                                                                                        bz2                                                                                                        
+                                                                                                                                                                                                                   
+                                                                              BZip2 Support          Enabled                                                                                                       
+                                                                              Stream Wrapper support compress.bzip2://                                                                                             
+                                                                              Stream Filter support  bzip2.decompress, bzip2.compress                                                                              
+                                                                              BZip2 Version          1.0.6, 6-Sept-2010                                                                                            
+                                                                                                                                                                                                                   
+                                                                                                     calendar                                                                                                      
+                                                                                                                                                                                                                   
+                                                                                             Calendar support enabled                                                                                              
+	http://www.php.net/                                                                                                                                                                            [------]
+
+[root@localhost ~]# dnf install postgresql-server
+Last metadata expiration check: 1:20:59 ago on Sat 07 Dec 2019 06:21:27 PM EET.
+Dependencies resolved.
+================================================================================================================================================================================================================
+ Package                                            Arch                                    Version                                                            Repository                                  Size
+================================================================================================================================================================================================================
+Installing:
+ postgresql-server                                  x86_64                                  10.6-1.module_el8.0.0+15+f57f353b                                  AppStream                                  5.1 M
+Installing dependencies:
+ libpq                                              x86_64                                  10.5-1.el8                                                         AppStream                                  188 k
+ postgresql                                         x86_64                                  10.6-1.module_el8.0.0+15+f57f353b                                  AppStream                                  1.5 M
+Enabling module streams:
+ postgresql                                                                                 10                                                                                                                 
+
+Transaction Summary
+================================================================================================================================================================================================================
+Install  3 Packages
+
+Total download size: 6.7 M
+Installed size: 27 M
+Is this ok [y/N]: y
+Downloading Packages:
+(1/3): libpq-10.5-1.el8.x86_64.rpm                                                                                                                                              161 kB/s | 188 kB     00:01    
+(2/3): postgresql-10.6-1.module_el8.0.0+15+f57f353b.x86_64.rpm                                                                                                                  1.2 MB/s | 1.5 MB     00:01    
+(3/3): postgresql-server-10.6-1.module_el8.0.0+15+f57f353b.x86_64.rpm                                                                                                           3.1 MB/s | 5.1 MB     00:01    
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Total                                                                                                                                                                           2.2 MB/s | 6.7 MB     00:03     
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+  Preparing        :                                                                                                                                                                                        1/1 
+  Installing       : libpq-10.5-1.el8.x86_64                                                                                                                                                                1/3 
+  Installing       : postgresql-10.6-1.module_el8.0.0+15+f57f353b.x86_64                                                                                                                                    2/3 
+  Running scriptlet: postgresql-server-10.6-1.module_el8.0.0+15+f57f353b.x86_64                                                                                                                             3/3 
+  Installing       : postgresql-server-10.6-1.module_el8.0.0+15+f57f353b.x86_64                                                                                                                             3/3 
+  Running scriptlet: postgresql-server-10.6-1.module_el8.0.0+15+f57f353b.x86_64                                                                                                                             3/3 
+  Verifying        : libpq-10.5-1.el8.x86_64                                                                                                                                                                1/3 
+  Verifying        : postgresql-10.6-1.module_el8.0.0+15+f57f353b.x86_64                                                                                                                                    2/3 
+  Verifying        : postgresql-server-10.6-1.module_el8.0.0+15+f57f353b.x86_64                                                                                                                             3/3 
+
+Installed:
+  postgresql-server-10.6-1.module_el8.0.0+15+f57f353b.x86_64                         libpq-10.5-1.el8.x86_64                         postgresql-10.6-1.module_el8.0.0+15+f57f353b.x86_64                        
+
+Complete!
+[root@localhost ~]# dnf install php-pgsql
+Last metadata expiration check: 1:22:50 ago on Sat 07 Dec 2019 06:21:27 PM EET.
+Dependencies resolved.
+================================================================================================================================================================================================================
+ Package                                     Arch                                     Version                                                                 Repository                                   Size
+================================================================================================================================================================================================================
+Installing:
+ php-pgsql                                   x86_64                                   7.2.11-1.module_el8.0.0+56+d1ca79aa                                     AppStream                                   117 k
+
+Transaction Summary
+================================================================================================================================================================================================================
+Install  1 Package
+
+Total download size: 117 k
+Installed size: 196 k
+Is this ok [y/N]: y
+Downloading Packages:
+php-pgsql-7.2.11-1.module_el8.0.0+56+d1ca79aa.x86_64.rpm                                                                                                                        105 kB/s | 117 kB     00:01    
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Total                                                                                                                                                                            47 kB/s | 117 kB     00:02     
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+  Preparing        :                                                                                                                                                                                        1/1 
+  Installing       : php-pgsql-7.2.11-1.module_el8.0.0+56+d1ca79aa.x86_64                                                                                                                                   1/1 
+  Running scriptlet: php-pgsql-7.2.11-1.module_el8.0.0+56+d1ca79aa.x86_64                                                                                                                                   1/1 
+  Verifying        : php-pgsql-7.2.11-1.module_el8.0.0+56+d1ca79aa.x86_64                                                                                                                                   1/1 
+
+Installed:
+  php-pgsql-7.2.11-1.module_el8.0.0+56+d1ca79aa.x86_64                                                                                                                                                          
+
+Complete!
+[root@localhost ~]# postgresql-setup --initdb --unit postgresql
+ * Initializing database in '/var/lib/pgsql/data'
+ * Initialized, logs are in /var/lib/pgsql/initdb_postgresql.log
+[root@localhost ~]# systemctl start postgresql.service
+[root@localhost ~]# systemctl status postgresql.service
+● postgresql.service - PostgreSQL database server
+   Loaded: loaded (/usr/lib/systemd/system/postgresql.service; disabled; vendor preset: disabled)
+   Active: active (running) since Sat 2019-12-07 19:53:16 EET; 8s ago
+  Process: 12684 ExecStartPre=/usr/libexec/postgresql-check-db-dir postgresql (code=exited, status=0/SUCCESS)
+ Main PID: 12687 (postmaster)
+    Tasks: 8 (limit: 22204)
+   Memory: 16.3M
+   CGroup: /system.slice/postgresql.service
+           ├─12687 /usr/bin/postmaster -D /var/lib/pgsql/data
+           ├─12688 postgres: logger process   
+           ├─12690 postgres: checkpointer process   
+           ├─12691 postgres: writer process   
+           ├─12692 postgres: wal writer process   
+           ├─12693 postgres: autovacuum launcher process   
+           ├─12694 postgres: stats collector process   
+           └─12695 postgres: bgworker: logical replication launcher   
+
+Dec 07 19:53:15 localhost.localdomain systemd[1]: Starting PostgreSQL database server...
+Dec 07 19:53:15 localhost.localdomain postmaster[12687]: 2019-12-07 19:53:15.748 EET [12687] LOG:  listening on IPv6 address "::1", port 5432
+Dec 07 19:53:15 localhost.localdomain postmaster[12687]: 2019-12-07 19:53:15.748 EET [12687] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+Dec 07 19:53:15 localhost.localdomain postmaster[12687]: 2019-12-07 19:53:15.789 EET [12687] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+Dec 07 19:53:15 localhost.localdomain postmaster[12687]: 2019-12-07 19:53:15.855 EET [12687] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+Dec 07 19:53:15 localhost.localdomain postmaster[12687]: 2019-12-07 19:53:15.908 EET [12687] LOG:  redirecting log output to logging collector process
+Dec 07 19:53:15 localhost.localdomain postmaster[12687]: 2019-12-07 19:53:15.908 EET [12687] HINT:  Future log output will appear in directory "log".
+Dec 07 19:53:16 localhost.localdomain systemd[1]: Started PostgreSQL database server.
+[root@localhost ~]# systemctl enable postgresql.service
+Created symlink /etc/systemd/system/multi-user.target.wants/postgresql.service → /usr/lib/systemd/system/postgresql.service.
+[root@localhost ~]# firewall-cmd --add-port=5432/tcp 
+success
+[root@localhost ~]# firewall-cmd --permanent --add-port=5432/tcp
+success
+[root@localhost ~]# firewall-cmd --reload
+success
+[root@localhost ~]#
+
+
+
+
+
+
+
